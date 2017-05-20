@@ -28,6 +28,10 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" move between buffers
+map <S-Right> :bnext!<cr>
+map <S-Left> :bprevious!<cr>
+
 " nerdtree
 " Ctrl-P to Display the file browser tree
 nmap <C-P> :NERDTreeTabsToggle<CR>
@@ -52,4 +56,4 @@ nmap <leader>D :Gdiff<space>
 nmap <F8> :TagbarToggle<CR>
 
 " eunuch
-nmap <C-m> :Move 
+nmap <C-m> :Move

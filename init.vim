@@ -29,8 +29,12 @@ syntax on
 set noeol
 set binary
 
+" strip whitespaces from end of line
+autocmd BufWritePre * :%s/\s\+$//e
+
 " presentation settings
-set number              " precede each line with its line number
+set number              " precede current line with its absolute line number
+set relativenumber      " precede each line with its relative number
 set numberwidth=3       " number of culumns for line numbers
 set textwidth=0         " Do not wrap words (insert)
 set nowrap              " Do not wrap words (view)
@@ -41,15 +45,9 @@ set wildmenu            " enhanced command completion
 set visualbell          " use visual bell instead of beeping
 set laststatus=2        " always show the status line
 set list listchars=tab:>-,trail:.,extends:>
-set list
 
 " highlight spell errors
 hi SpellErrors guibg=red guifg=black ctermbg=red ctermfg=black
-
-" terminal true colors
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-let g:t_Co=256
-let g:molokai_original=1
 
 " decreasing updatetime
 set updatetime=250
@@ -58,10 +56,14 @@ set updatetime=250
 set clipboard=unnamed
 set sessionoptions=buffers
 
-" Colorschemes
+" colorschemes
 colorscheme molokai
 set colorcolumn=81
-autocmd BufWritePre * :%s/\s\+$//e
+
+" terminal true colors
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+let g:t_Co=256
+let g:molokai_original=1
 
 " load bundles
 source ~/.config/nvim/bundles.vim
@@ -69,3 +71,6 @@ source ~/.config/nvim/bundles.vim
 source ~/.config/nvim/plugins.vim
 " load key bindings
 source ~/.config/nvim/bindings.vim
+
+" save file with sudo
+cmap w!! w !sudo tee > /dev/null %
