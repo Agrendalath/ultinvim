@@ -2,7 +2,7 @@
 call plug#begin('~/.config/nvim/plugged')
 
 " NerdTree
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
 
 " NerdTree-git
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -21,7 +21,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Tagbar
-Plug 'saadmir/tagbar'
+Plug 'preservim/tagbar'
 
 " Syntastic
 Plug 'scrooloose/syntastic'
